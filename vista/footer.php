@@ -5,6 +5,6 @@
 Correo electrónico exclusivo para recibir notificaciones judiciales: notificacionesjudiciales@tdea.edu.co  
 Atención al Usuario: atencionalcliente@tdea.edu.co   </p>
             <div align="center">
-            <img align=center src=" ../imagenes/logosicontec.png" width=20%></img><br><br>  
+            <img align=center src=" <?php echo $url.'/imagenes/logosicontec.png' ?>" width=20%></img><br><br>  
             </div>         
         </footer>

@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+$url ='http://localhost/funda/';
+?>
 <html lang="en">
 <head>
   <!-- Información general de la página -->
@@ -8,11 +11,12 @@
   <link rel="icon" type="image/gif" href="../iconos/favicon.ico">  
   <title>Título de la Página</title>
   <!-- Llama los archivos de Bootstrap -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-  <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../js/jquery-ui.min.js"></script> 
+  <link rel="stylesheet" type="text/css" href="<?php echo $url.'css/bootstrap.min.css' ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo $url.'css/bootstrap.css' ?>">
+  <script type="text/javascript" src="<?php echo $url.'js/jquery-3.2.1.min.js' ?>"></script>
+  <script type="text/javascript" src="<?php echo $url.'js/bootstrap.min.js' ?>"></script>
+  <script type="text/javascript" src="<?php echo $url.'js/jquery-ui.min.js' ?>"></script> 
+  <script type="text/javascript" src="<?php echo $url.'js/ie10-viewport-bug-workaround.js' ?>"></script>
 </head>
 <body>  
 
@@ -22,7 +26,7 @@
     border-style: ridge;">  <!-- Crea un contenedor, para que la página no sea de todo el ancho de la pantalla. En este caso se le crea un borde al contenedor -->
   <div class="jumbotron"> <!-- Así denomina bootstrap al espacio donde van los títulos y banner -->
         <div align="center">
-        <img src="../imagenes/Banner.jpg" alt="Banner" width=100% >
+        <img src="<?php echo $url.'imagenes/Banner.jpg' ?>" alt="Banner" width=100% >
       </div>
   </div>
     
@@ -59,13 +63,13 @@
             <li><a href="#">Link Separado</a></li>            
           </ul>
         </li>             
-      <li><a href="../descargas/Tutorial.pdf" target="_blank"><span class="icon-clipboard"></span> Manual de Usuario</a></li><!-- Ejemplo de link normal-->
+      <li><a href="<?php echo $url.'descargas/Tutorial.pdf' ?>" target="_blank"><span class="icon-clipboard"></span> Manual de Usuario</a></li><!-- Ejemplo de link normal-->
       </ul>
       <form class="navbar-form navbar-right"> <!-- En caso de estar conectado muestra cerrar sesión, en caso contrario muestra entrar-->
                 <?php
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 ?>
-                <a class="btn btn-default" href="../controlador/cerrarSesion.php" role="button"><span class="icon-log-out"></span>  Salir</a>
+                <a class="btn btn-default" href="<?php echo $url.'controlador/cerrarSesion.php' ?>" role="button"><span class="icon-log-out"></span>  Salir</a>
                 <?php                
               }else { 
               ?>
@@ -81,10 +85,10 @@
     <div class="container"> 
       <div class="row">
       <div class="col-xs-12 col-md-4 ">
-        <img src="../imagenes/logo-ppal.jpg" width=100% alt="logo"  >
+        <img src="<?php echo $url.'imagenes/logo-ppal.jpg' ?>" width=100% alt="logo"  >
       </div>      
       <div class="hidden-sm hidden-xs col-md-4"  ">
-        <img src="../imagenes/gel2.jpg" width=100% alt="escudos"  >
+        <img src="<?php echo $url.'imagenes/gel2.jpg' ?>" width=100% alt="escudos"  >
       </div>   
       <div class="hidden-xs col-md-4 ">
          <h1> Espacio para noticias </h1>
