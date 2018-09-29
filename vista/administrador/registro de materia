@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tecnologico de Antioquia</title>
+</head>
+<body>
+	<?php 
+		include_once"../header.php"
+	?>
+	<form role="form">
+		<div class="form-group">
+   		<label for="ejemplo_email_1">NombreAsignatura</label>
+    	<input type="text" class="form-control" id="ejemplo_email_1"
+           	placeholder="Nombre Asignatura">
+    </div><br>
+    <div class="form-group">
+   		<label for="ejemplo_email_1">Codigo</label>
+    	<input type="text" class="form-control" id="ejemplo_email_1"
+           	placeholder="Codigo">
+    </div><br>
+    <div class="form-group">
+   		<label for="ejemplo_email_1">Nombre Del Docente</label>
+    	<input type="text" class="form-control" id="ejemplo_email_1"
+           	placeholder="Nombre de Docente">
+    </div><br>
+    <div class="form-group">	
+   		<label for="ejemplo_email_1">Numero de Identificacion</label>
+    	<input type="text" class="form-control" id="ejemplo_email_1"
+           	placeholder="Identificacion">
+    </div><br>
+    <div class="form-group">
+   		<label for="ejemplo_email_1">Fecha de Inicio de Creacion</label>
+    	<input type="date" class="form-control" id="ejemplo_email_1"
+           	placeholder="Introduce tu email">
+    </div><br>
+  	<div class="form-group">
+   		<label for="ejemplo_email_1">Fecha de Modificacion</label>
+    	<input type="date" class="form-control" id="ejemplo_email_1"
+           	placeholder="Introduce tu email">
+    </div><br>
+  <div class="form-group">
+    <label for="ejemplo_password_1">Contraseña</label>
+    <input type="password" class="form-control" id="ejemplo_password_1" 
+           placeholder="Contraseña">
+  </div><br>
+  <div class="form-group">
+    <label for="ejemplo_password_1">Estado</label>
+    <input type="text" class="form-control" id="ejemplo_password_1" 
+           placeholder="Contraseña">
+  </div><br>
+  <div>
+  		
+  			<button type="submit" class="btn btn-sucess">Enviar</button>
+  		    <button type="submit" class="btn btn-sucess">Salir</button>
+  		$sql = "INSERT INTO `Asignatura`(`NombreAsignatura`, `Codigo`, `Nombredocente`, `Numero identificacion`, `fechaNacimiento`, `genero`, `direccion`, `telefonoFijo`, `telefonoCelular`, `email`)
+VALUES 
+('$_REQUEST[txtNombre]'
+,'$_REQUEST[txtApellidos]'
+,'$_REQUEST[txtTipoID]'
+,'$_REQUEST[txtDocumento]'
+,'$_REQUEST[txtFecha]'
+,'$_REQUEST[txtGenero]'
+,'$_REQUEST[txtDireccion]'
+,'$_REQUEST[txtFijo]'
+,'$_REQUEST[txtCelular]'
+,'$_REQUEST[txtEmail]')";
+$res = $conexion->query($sql);
+if($res === FALSE){
+	echo $sql;
+	die("Problemas en el insert: ".mysqli_error());
+}
+  	
+  </div>
+
+ 
+
+	<?php
+		include_once"../footer.php" 
+	?>
+</div>
+</body>
+</html>
