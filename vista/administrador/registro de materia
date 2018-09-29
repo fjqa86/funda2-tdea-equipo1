@@ -79,6 +79,7 @@ if($res === FALSE){
 	<?php
 		include_once"../footer.php" 
 	?>
+	<--!no he terminado por que no tengo sql para abrir la base de datos para poder que los campos ingresados por el docente ingresen a la base de datos es un formulario muy sencillo listo
 </div>
 </body>
 </html>
