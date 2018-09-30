@@ -6,80 +6,52 @@
 	<title>Tecnologico de Antioquia</title>
 </head>
 <body>
-	<?php 
-		include_once"../header.php"
-	?>
-	<form role="form">
+	
+	<form action="Asignatura.php" role="form">
 		<div class="form-group">
    		<label for="ejemplo_email_1">NombreAsignatura</label>
-    	<input type="text" class="form-control" id="ejemplo_email_1"
-           	placeholder="Nombre Asignatura">
+    	<input type="text" name="nombreAsignatura" class="form-control" id="ejemplo_email_1"
+           	placeholder="Nombre Asignatur">
     </div><br>
     <div class="form-group">
    		<label for="ejemplo_email_1">Codigo</label>
-    	<input type="text" class="form-control" id="ejemplo_email_1"
+    	<input type="text" name="codigo" class="form-control" id="ejemplo_email_1"
            	placeholder="Codigo">
     </div><br>
     <div class="form-group">
-   		<label for="ejemplo_email_1">Nombre Del Docente</label>
-    	<input type="text" class="form-control" id="ejemplo_email_1"
-           	placeholder="Nombre de Docente">
+   		<label for="ejemplo_email_1">Fecha de Creacion</label>
+    	<input type="date" name="fechaCreacion" class="form-control" id="ejemplo_email_1"
+           	placeholder="Creacion">
     </div><br>
     <div class="form-group">	
-   		<label for="ejemplo_email_1">Numero de Identificacion</label>
-    	<input type="text" class="form-control" id="ejemplo_email_1"
-           	placeholder="Identificacion">
+   		<label for="ejemplo_email_1">fecha de modificacion</label>
+    	<input type="date" name="fechaModificacion" class="form-control" id="ejemplo_email_1"
+           	placeholder="Modificacion">
     </div><br>
     <div class="form-group">
-   		<label for="ejemplo_email_1">Fecha de Inicio de Creacion</label>
-    	<input type="date" class="form-control" id="ejemplo_email_1"
-           	placeholder="Introduce tu email">
+   		<label for="ejemplo_email_1">Usuario de Creacion</label>
+    	<input type="text" name="usuarioCreacion" class="form-control" id="ejemplo_email_1"
+           	placeholder="usuario de Creacion">
     </div><br>
   	<div class="form-group">
-   		<label for="ejemplo_email_1">Fecha de Modificacion</label>
-    	<input type="date" class="form-control" id="ejemplo_email_1"
-           	placeholder="Introduce tu email">
+   		<label for="ejemplo_email_1">Usuario de Modificacion</label>
+    	<input type="text" name="usuarioModif" class="form-control" id="ejemplo_email_1"
+           	placeholder="Usuario modificacion">
     </div><br>
   <div class="form-group">
-    <label for="ejemplo_password_1">Contraseña</label>
-    <input type="password" class="form-control" id="ejemplo_password_1" 
-           placeholder="Contraseña">
-  </div><br>
-  <div class="form-group">
-    <label for="ejemplo_password_1">Estado</label>
-    <input type="text" class="form-control" id="ejemplo_password_1" 
-           placeholder="Contraseña">
+    <label for="ejemplo_password_1">Estado<input type="radio" name="estado1" class="form-control" id="ejemplo_password_1"placeholder="E">activo<input type="radio" name="estado2" class="form-control" id="ejemplo_password_1"placeholder="E">inactivo
   </div><br>
   <div>
   		
   			<button type="submit" class="btn btn-sucess">Enviar</button>
   		    <button type="submit" class="btn btn-sucess">Salir</button>
-  		$sql = "INSERT INTO `Asignatura`(`NombreAsignatura`, `Codigo`, `Nombredocente`, `Numero identificacion`, `fechaNacimiento`, `genero`, `direccion`, `telefonoFijo`, `telefonoCelular`, `email`)
-VALUES 
-('$_REQUEST[txtNombre]'
-,'$_REQUEST[txtApellidos]'
-,'$_REQUEST[txtTipoID]'
-,'$_REQUEST[txtDocumento]'
-,'$_REQUEST[txtFecha]'
-,'$_REQUEST[txtGenero]'
-,'$_REQUEST[txtDireccion]'
-,'$_REQUEST[txtFijo]'
-,'$_REQUEST[txtCelular]'
-,'$_REQUEST[txtEmail]')";
-$res = $conexion->query($sql);
-if($res === FALSE){
-	echo $sql;
-	die("Problemas en el insert: ".mysqli_error());
-}
+
   	
   </div>
 
  
 
-	<?php
-		include_once"../footer.php" 
-	?>
-	<--!no he terminado por que no tengo sql para abrir la base de datos para poder que los campos ingresados por el docente ingresen a la base de datos es un formulario muy sencillo listo
+	
 </div>
 </body>
 </html>
