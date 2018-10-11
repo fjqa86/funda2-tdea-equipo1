@@ -10,19 +10,19 @@
       </div>  
     </div>
 
-    <form id="frmUsuarios" action="?action='save'" method="post">
+    <form id="frmUsuarios" action="?action=save" method="post">
     <div class="form-group">
     <fieldset class="leyenda" > <legend class="stiloLeyenda">Datos Personales</legend>
       <div class="col-xs-12 col-sm-6 ">
         <div class="form-group">
             <label for="NombreCompleto">Nombre Completo<span><em>(requerido)</em></span></label>
-            <input type="text" class="form-control" id="NombreCompleto" placeholder="Nombre Completo" name="txtNombre" required>
+            <input type="text" class="form-control" id="txtusername" placeholder="Nombre Completo" name="txtusername" required value="<?php if(!empty($data)){ echo $data['txtusername'];} ?>">
         </div>
         
 
         <div class="form-group">
             <label for="Rol">Rol><em>(requerido)</em></span></label>
-             <select class="form-control" name="txtRol">
+             <select class="form-control" name="txtrol">
             <option value="">-- Seleccione --</option>
             <?php echo $optionRoles ?>
           </select> 

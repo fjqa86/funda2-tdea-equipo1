@@ -15,4 +15,11 @@ function listRoles(){
     disconect($cn);
     return $res;
 }
+
+function activateUser($username,$rol){
+    $cn = conect();
+    $res = $cn->query("UPDATE login SET rol=$rol WHERE nombreUsuario=$username");
+    disconect($cn);
+    return $res;
+}
 ?>
