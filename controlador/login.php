@@ -27,8 +27,9 @@ include_once 'conexion.php'; //llama al archivo de conexión de la base de datos
                 case 1:
                     header("Location: ../vista/administrador/index.php");   //redirige al index pero ya la persona estará autenticada    
                     break;
+                    
                 case 2:
-                    echo "i equals 2";
+                    header("Location: ../vista/docente/index.php");
                     break;
             }
                    
@@ -36,7 +37,7 @@ include_once 'conexion.php'; //llama al archivo de conexión de la base de datos
 
     else {
        echo "Contraseña equivocada"; // en caso contrario imprime un mensaje de Contraseña equivocada
-       header('refresh:2; url=../ingreso.php');  // muestra el mensaje dos segundos y redirige al menú de ingreso
+       header('refresh:2; url=../vista/ingreso.php');  // muestra el mensaje dos segundos y redirige al menú de ingreso
     }
 ?>
 

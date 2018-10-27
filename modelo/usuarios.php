@@ -22,4 +22,11 @@ function activateUser($username,$rol){
     disconect($cn);
     return $res;
 }
+
+function listDocentes(){
+    $cn = conect();
+    $res =  $cn->query("SELECT * FROM login WHERE rol = 2");
+    disconect($cn);
+    return $res;
+}
 ?>

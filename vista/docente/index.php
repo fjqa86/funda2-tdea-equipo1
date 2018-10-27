@@ -5,10 +5,8 @@
 
     <div class="row">
       <h1>docente</h1><br>
-      <h2> Activar usuarios </h2><br>
-      <h3> Crear asginactura </h3><br>
-      <h4> Asignar asignatura a doncente </h4><br>
-      <p> Ejemplo de texto dentro de un párrafo </p>      
+      <h2> <a href="../../controlador/miscursos.php">Mis cursos </a></h2><br>
+
     </div>
 
   <?php  

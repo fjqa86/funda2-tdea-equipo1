@@ -7,7 +7,9 @@
     <div class="row">
       <h1> Administrador</h1><br>
       <h2> <a href="../../controlador/usuarios.php">Activar usuarios </a></h2><br>
-      <h2> <a href="../../controlador/asignatura.php">Registrar Asignatura </a></h2><br>   
+      <h2> <a href="../../controlador/asignatura.php">Registrar Asignatura </a></h2><br>
+      <h3> <a href="../../controlador/asignarmateria.php">Asignar docente a la asignatura</a></h2><br>
+
     </div>
 
   <?php  
