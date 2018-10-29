@@ -25,7 +25,7 @@ function activateUser($username,$rol){
 
 function listDocentes(){
     $cn = conect();
-    $res =  $cn->query("SELECT * FROM login WHERE rol = 2");
+    $res =  $cn->query("SELECT l.* ,f.nombre,f.apellido FROM login l,formulario f WHERE  l.nombreUsuario=f.nombreUsuario and rol = 2");
     disconect($cn);
     return $res;
 }

@@ -1,5 +1,8 @@
-
 <?php
+
+/*
+daniel hermoso
+*/
 require '../modelo/asignatura.php';
 
 $view;
@@ -18,28 +21,24 @@ if(!empty($_GET['action'])){
 
 if(!empty($action)){
     if($action =="save"){
-        saveAsignatura($_REQUEST['txtname'],$_REQUEST['txtcode']);
-        message('Se grabò la asignatura correctamente');
+        $idAsignatura = $_GET('idAsignatura');
+        updateEstado($idAsignatura,'publicada');
+        message('se cambio a estado activo correctamente');
         $data = array();
     }
 }
 
 if(empty($view)){
-    if(!empty($_GET['data'])){
-        $tmp = unserialize($_GET['data']);
-        $data['txtname'] = $tmp->nombreAsignatura;
-        $data['txtcode'] = $tmp->codigo;
-    }
-    $list = listAsignaturas();
+    $list = listExperto();
 
     if ($list->num_rows > 0) 
        {  
         $table = '<table class="table">
         <thead>
           <tr>
-            <th scope="col">Código</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Acción</th>
+            <th scope="col">nombreasignatura</th>
+            <th scope="col">codigo</th>
+            <th scope="col">estado</th>
           </tr>
         </thead>
         <tbody>';
@@ -48,7 +47,7 @@ if(empty($view)){
               <tr>
                 <th scope="row">'.$asignatura->nombreAsignatura.'</th>'
                 .'<td>'.$asignatura->codigo.'</td>'.
-                '<td> <a href="asignatura.php?data='.urlencode(serialize($asignatura)).'" >Editar</a></td>
+                '<td> <a href="actualizacion.php?action=save&idAsignatura='.$asignatura->codigo.'" >Editar</a></td>
               </tr>';
         }
         $table .=   ' </tbody>
@@ -57,17 +56,5 @@ if(empty($view)){
         $table = 'No hay resultados';
     }
 
-    require ('../vista/administrador/asignatura.php'); 
+    require ('../vista/mproduccion/mdeproduccion.php'); 
 }
-
-
-
-function message($msn){
-    $success = '    <div class="alert alert-success alert-dismissible">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
-    $msn.
-  '</div>';
-}	
-
-?>
-

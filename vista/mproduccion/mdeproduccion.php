@@ -1,17 +1,19 @@
-   <?php
-    /* Llama al archivo con la cabecera */
+
+<?php
+    /* 
+    Daniel hermoso
+    Llama al archivo con la cabecera */
     include_once "../vista/header.php"
     ?> 
 
-    <div class="jumbotron">
+<div class="jumbotron">
       <div class="container">
-        <h1 class="featurette-heading">Asignación <span class="text-muted"> de docente a asignaturael Tecnológico de Antioquia.</span></h1><br><br>
-        <p class="lead">Asigna una matria a un docente. </p> 
+        <h1 class="featurette-heading">Publicación <span class="text-muted"> de asignatura para el Tecnológico de Antioquia.</span></h1><br><br>
+        <p class="lead">Active la asignatura en la plataforma. </p> 
       </div>  
     </div>
 
-  <?php echo $table ?>
-</section>
+    <?php echo $table ?>
 <?php
 include_once "../vista/footer.php"
 ?>

@@ -1,7 +1,7 @@
 <?php
 require_once '../controlador/conexion.php';
 
-function save($name,$code){
+function saveAsignatura($name,$code){
     $cn = conect();
     $sql = "INSERT INTO `asignatura`(`nombreAsignatura`, `codigo`, `fechaCreacion`, `usuarioCreacion`, `estado`)
 	VALUES 
@@ -15,7 +15,7 @@ function save($name,$code){
     
 }
 
-function listAll(){
+function listAsignaturas(){
     $cn = conect();
     $res =  $cn->query("SELECT * FROM asignatura");
     disconect($cn);
@@ -35,6 +35,37 @@ function updateDocente($idDocente,$codigo){
     $res =  $cn->query($sql);
     disconect($cn);
     
+}
+
+/*
+daniel hermoso
+*/
+function updateEstado($idAsignatura,$estado){
+    $cn = conect();
+    $sql = "UPDATE asignatura SET estado=".$estado." WHERE codigo=".$idAsignatura;
+    $res = $cn->query($sql);
+    disconect($cn);
+
+}
+
+/*
+daniel hermoso
+*/
+function listExperto(){
+    $cn = conect();
+    $res = $cn->query("SELECT * FROM asignatura WHERE estado = 'S'");
+    disconect($cn);
+    return $res; 
+}
+
+/*
+fjqa86
+*/
+function listAsignaturaByDocente($idDocente){
+    $cn = conect();
+    $res =  $cn->query("SELECT * FROM asignatura WHERE docente =".$idDocente);
+    disconect($cn);
+    return $res;
 }
 
 ?>

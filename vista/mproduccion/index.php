@@ -4,11 +4,8 @@
     ?>
 
     <div class="row">
-      <h1>mproduccion</h1><br>
-      <h2> Activar usuarios </h2><br>
-      <h3> Crear asginactura </h3><br>
-      <h4> Asignar asignatura a doncente </h4><br>
-      <p> Ejemplo de texto dentro de un párrafo </p>      
+      <h1>Producción</h1><br>
+      <h2><a href="../vista/actualizacion.php">Publicar asigantura </a></h2><br>
     </div>
 
   <?php  

@@ -20,7 +20,8 @@ if(!empty($_GET['action'])){
 
 if(!empty($action)){
     if($action =="save"){
-        $codigo = $_GET('codigo');
+        $codigo = $_REQUEST['txtcodigo'];
+        $idDocente = $_REQUEST['txtusuario'];
         updateDocente($idDocente,$codigo);
         message('Se ha asigando la materia al docente correctamente');
         $data = array();
@@ -32,6 +33,11 @@ if(empty($view)){
 
     $users = listDocentes();
    
+    if(!empty($_GET['data'])){
+        $tmp = unserialize($_GET['data']);
+        $data['txtcodigo'] = $tmp->codigo;
+        $data['txtusuario'] = $tmp->docente;
+    }
     if ($list->num_rows > 0) 
        {  
         $table = '<table class="table">
@@ -46,23 +52,10 @@ if(empty($view)){
             $table .= '
               <tr>
                 <th scope="row">'.$asignatura->nombreAsignatura.'</th>'
-                .'<td>';
-                if($users->num_rows > 0){
-                 
-                    $option ='<select class="form-control" name="txtrol">';
-                    while($user = $users->fetch_object()){
-                        if(!empty($asignatura->docente) and $asignatura->docente==$user->nombreUsuario){
-                            $option.= '<option value='.$user->nombreUsuario.' selected>'.$user->nombreUsuario.'</option>';
-                        }else{
-                            $option.= '<option value='.$user->nombreUsuario.' >'.$user->nombreUsuario.'</option>';
-                        }
-                        
-                    }
-                    $option.='</select>';
-                    $table.=$option;
-                }
+                .'<td>'
+                .$asignatura->docente.
                 '</td>'.
-                '<td> <a href="asignarmateria.php?action="save"&codigo='.$asignatura->codigo.')>Aprobar</a></td>
+                '<td> <a href="asignarmateria.php?data='.urlencode(serialize($asignatura)).'")>Editar</a></td>
               </tr>';
         }
         $table .=   ' </tbody>
@@ -71,7 +64,16 @@ if(empty($view)){
         $table = 'No hay resultados';
     }
 
-    require ('../vista/docente/asignarmateria.php'); 
+    $option ='';
+    while($user = $users->fetch_object()){
+        if(!empty($data['txtusuario']) and $data['txtusuario'] == $user->nombreUsuario){
+            $option.= '<option value='.$user->nombreUsuario.' selected>'.$user->nombre.' '.$user->apellido.'</option>';
+        }else{
+            $option.= '<option value='.$user->nombreUsuario.' >'.$user->nombre.' '.$user->apellido.'</option>';
+        }
+        
+    }
+    require ('../vista/administrador/asignarmateria.php'); 
 }
 
 
