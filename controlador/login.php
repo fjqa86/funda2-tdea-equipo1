@@ -31,6 +31,12 @@ include_once 'conexion.php'; //llama al archivo de conexión de la base de datos
                 case 2:
                     header("Location: ../vista/docente/index.php");
                     break;
+                case 3:
+                    header("Location: ../vista/cordinador/index.php");
+                    break;
+                case 4:
+                    header("Location: ../vista/mproduccion/index.php");
+                    break;
             }
                    
         } 

@@ -22,7 +22,9 @@ if(!empty($_GET['action'])){
 
 if(!empty($action)){
     if($action =="save"){
-        saveContenido($_REQUEST['txtasignatura'],$_REQUEST['txttitulo'],$_REQUEST['txtdescripcion'],'');
+        move_uploaded_file($_FILES['txtfile']['tmp_name'],$_FILES['txtfile']['name']);
+        
+        saveContenido($_REQUEST['txtasignatura'],$_REQUEST['txttitulo'],$_REQUEST['txtdescripcion'],'imagenes/upload/'.$_FILES['txtfile']['tmp_name']);
         message('Se ingreso el contenido correctamente');
         $data = array();
     }

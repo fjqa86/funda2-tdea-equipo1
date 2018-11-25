@@ -10,7 +10,7 @@
       </div>  
     </div>
 
-    <form id="frmIngresoContenido" action="?action=save" method="post">
+    <form id="frmIngresoContenido" action="?action=save" method="post" enctype="multipart/form-data">
     <div class="form-group">
     <fieldset class="leyenda" > <legend class="stiloLeyenda">Contenido</legend>
       <div class="col-xs-12 col-sm-6 ">
@@ -26,9 +26,9 @@
 
         <div class="form-group">
             <label for="txtfile">Archivo<span><em></em></span></label>
-            <input type="text" class="form-control" id="txtfile" placeholder="Archivo contenido" name="txtfile">
+            <input type="file" class="form-control" id="txtfile" placeholder="Archivo contenido" name="txtfile">
         </div>
-
+s
         <div class="form-group">
             <label for="Asignatura">Asignatura<em>(requerido)</em></span></label>
              <select class="form-control" name="txtasignatura">

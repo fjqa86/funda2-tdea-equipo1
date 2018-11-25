@@ -6,6 +6,7 @@
     <div class="row">
       <h1>docente</h1><br>
       <h2> <a href="../../controlador/ingresarContenido.php">Mis cursos </a></h2><br>
+      <h2> <a href="../../controlador/contenidoAsignatura.php">VER ESTADO PRODUCTO </a></h2><br>
 
     </div>
 

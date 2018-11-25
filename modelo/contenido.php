@@ -17,7 +17,16 @@ function saveContenido($codasignatura,$titulo,$des,$adjunto){
 
 function listAll(){
     $cn = conect();
-    $res =  $cn->query("SELECT * FROM contenido");
+    $res =  $cn->query("SELECT * FROM asignatura ");
+    disconect($cn);
+    return $res;
+}
+
+function listContenidoByAsignatura($idAsignatura){
+    $cn = conect();
+        $res =  $cn->query("SELECT * FROM contenido WHERE codasignatura ="
+        .$idAsignatura.")");
+
     disconect($cn);
     return $res;
 }

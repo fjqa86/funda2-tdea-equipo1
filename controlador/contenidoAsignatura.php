@@ -1,6 +1,6 @@
 <?php
 
-require '../modelo/contenido.php';
+require '../modelo/asignatura.php';
 
 /*
 Marlon y maicol
@@ -11,6 +11,8 @@ $action;
 $selected;
 $data = array();
 $success="";
+session_start();
+
 
 if(!empty($_GET['view'])){
     $view = $_GET['view'];
@@ -22,7 +24,7 @@ if(!empty($_GET['action'])){
 
 
 if(empty($view)){
-    $list = listAll();
+    $list = listAsignaturaByDocente($_SESSION['username']);
    
     if ($list->num_rows > 0) 
        {  
@@ -38,9 +40,9 @@ if(empty($view)){
         while ($contenido = $list->fetch_object()) {
             $table .= 
             '<tr>
-            <th scope="row">'.$contenido->titulo.'</th>'.'
+            <th scope="row">'.$contenido->nombreAsignatura.'</th>'.'
             <th scope="row">'.$contenido->estado.'</th>'.
-            '<td> <a href="informe.php?action="save"&codigo='.$contenido->codigo.')>VER</a></td>
+            '<td> <a href="ingresarContenido.php")>VER</a></td>
             </tr>';
               
 
@@ -52,5 +54,5 @@ if(empty($view)){
         $table = 'No hay resultados';
     }
 
-    require ('../vista/docente/contenido.php'); 
+    require ('../vista/docente/verproducto.php'); 
 }
